@@ -346,4 +346,18 @@ describe('Behavior and unit tests come here', function () {
     });
   });
 
+  describe('Fork features', function() {
+
+    it('Should accept space as empty pluralizer value', function() {
+      var b = new BabelFish('ru');
+
+      b.addPhrase('ru', 't1', '#{count} ((=0  |  |неоплаченных счёта|неоплаченных счетов)):count');
+
+      assert.equal(b.t('ru', 't1', 0), '0 ');
+      assert.equal(b.t('ru', 't1', 1), '1 ');
+      assert.equal(b.t('ru', 't1', 2), '2 неоплаченных счёта');
+      assert.equal(b.t('ru', 't1', 10), '10 неоплаченных счетов');
+    });
+  });
+
 });

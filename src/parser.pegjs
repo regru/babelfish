@@ -48,15 +48,15 @@ plural_forms
 // - `girl`
 // - `girls`
 plural_part
-  = '=' strict:[0-9]+ ' '? form:plural_char+ {
+  = '=' strict:[0-9]+ ' '? form:plural_char* {
       return {
         strict: strict.join(''),
-        text: form.join('')
+        text: form.join('').trim()
       }
     }
   / plural_char+ {
       return {
-        text: text()
+        text: text().trim()
       };
     }
 
