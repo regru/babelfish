@@ -1,3 +1,8 @@
+1.1.3-regru / 2017-12-15
+------------------------
+
+- Allow spaces and empty values for special form `((=0 | | nails))`
+
 1.1.2 / 2015-12-29
 ------------------
 
